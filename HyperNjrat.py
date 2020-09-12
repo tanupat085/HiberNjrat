@@ -5,6 +5,7 @@ import time
 import random
 import subprocess
 import socks
+import requests
 def title():
     print('''
     __  __                      _   __  _            __ 
@@ -15,9 +16,16 @@ def title():
       /____/_/                   /___/                  
                     By WachiraChoomsiri
 \n''')
+
+def getproxy():
+    proxy = "proxy.txt"
+    rsp = requests.get('https://api.proxyscrape.com/?request=getproxies&proxytype=socks4&timeout=10000&country=all')
+    with open(str(proxy),'wb') as fp:
+            fp.write(rsp.content)    
     
 def ip():
     title()
+    getproxy()
     global ip
     ip = input("Enter Target IP: ")
     port()
